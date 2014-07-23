@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Movie Search Results</title>
+  </head>
+  <body>
+    <%= ourCount %>
+    <!-- Replace me with a list of movies -->
+    	<ul>
+    		<% movieList.forEach(function(movie){ %>  
+    		<li> 
+            <form action="/addToQueue"  >
+            
+         
+            <a href="movies/<%= movie.imdbID %>"><%= movie.Title %> </a>
+            <input type="submit" value="Add to Queue" >
+            <input type="hidden" name = "queueValue" value= <%= movie.Title %> >
+
+            </form>
+        </li>
+
+    		<% }) %> 
+
+    	</ul>
+  </body>
+</html>
+
